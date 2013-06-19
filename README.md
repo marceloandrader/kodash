@@ -7,4 +7,6 @@
 
 # Update documentation and generate index
 
-./generate.sh
+Run this command:
+
+```./generate.sh```
