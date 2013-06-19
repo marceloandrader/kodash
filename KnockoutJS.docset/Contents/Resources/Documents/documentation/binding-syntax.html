@@ -1,0 +1,284 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Knockout : The data-bind syntax</title>
+        <link href="../css/tripoli.simple.css" type="text/css" rel="stylesheet" />
+        
+        <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+        <link rel="stylesheet" type="text/css" href="../css/smallScreen.css" media="only screen and (max-device-width: 800px)" />
+        <link rel="shortcut icon" href="img/favicon.ico" />
+        <!--[if IE]><link rel="stylesheet" type="text/css" href="../css/tripoli.simple.ie.css" /><![endif]-->
+        <!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="../css/ie6ie7.css" /><![endif]-->
+        <!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="../css/ie6.css" /><![endif]-->
+        <script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="../js/knockout-2.2.0.js"></script>
+<script type="text/javascript" src="../js/cufon-yui.js"></script>
+<script type="text/javascript" src="../js/titilliummaps.font.js"></script>
+<script type="text/javascript" src="../js/json2.js"></script>
+
+<!--[if lt IE 7]>
+<script defer type="text/javascript" src="../js/ie6pngfix.js"></script>
+<![endif]-->
+
+<script type="text/javascript" src="../js/syntaxhighlighter_3.0.83/scripts/shCore.js"></script> 
+<script type="text/javascript" src="../js/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script> 
+<script type="text/javascript" src="../js/syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script> 
+<link type="text/css" rel="stylesheet" href="../js/syntaxhighlighter_3.0.83/styles/shThemeFadeToGrey.css"/>  
+
+<script type="text/javascript">
+    $(function() {
+        // Fancy fonts
+        Cufon.replace('.titillium');
+        Cufon.replace('.engraved', {
+            textShadow: 'rgba(253, 224, 217, 0.45) 1.2px 1px'	
+        });
+        
+        // Syntax highlighting
+        $("pre > code").each(function() {
+            var codeText = $(this).text();
+            $(this).parent().text(codeText).addClass("brush:js");
+        });
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = false;
+        SyntaxHighlighter.all();
+        
+        // Highlight current top menu item
+        var desiredMenuItem = '' || 'documentation';
+        $(".main-menu a[rel=" + desiredMenuItem + "]").addClass("active");
+        
+        // Highlight current left-hand-nav menu item
+        var urlFilename = location.href.match(/\/([^\/]+)$/);
+        if (urlFilename) {
+            $(".leftColContents li:has(a[href$=" + urlFilename[1] + "])").addClass("active");
+        }
+    });
+</script> 
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="vspace"></div>
+            <div class="main-menu">
+    <ul>
+        <li><a rel="home" href="../index.html">Home</a></li>
+        <li><a rel="installation" href="../downloads/index.html">Download / Install</a></li>
+        <li><a rel="tutorials" href="http://learn.knockoutjs.com/">Tutorials</a></li>
+        <li><a rel="examples" href="../examples/">Live examples</a></li>
+        <li><a rel="documentation" href="../documentation/introduction.html">Documentation</a></li>
+        <li><a href="http://groups.google.com/group/knockoutjs">Forum</a></li>
+        <li><a href="http://github.com/SteveSanderson/knockout">Source</a></li>
+    </ul>
+</div>        	
+<div class="clear"></div>
+            <div class="vspace"></div>
+            <div>	
+	<div class="leftCol">		
+		<div class="leftColBackground">&nbsp;</div>
+		<div class="leftColContents">
+			<h1>Getting started</h1>
+
+<ol>
+    <li><a href="../documentation/introduction.html">How KO works and what benefits it brings</a></li>
+    <li><a href="../downloads/index.html">Downloading and installing</a></li>
+</ol>
+
+<h1>Observables</h1>
+
+<ol>
+    <li><a href="../documentation/observables.html">Creating <em>view models</em> with <em>observables</em></a></li>
+    <li><a href="../documentation/computedObservables.html">Using <em>computed observables</em></a></li>
+    <li><a href="../documentation/observableArrays.html">Working with <em>observable arrays</em></a></li>	
+</ol>
+
+<h1>Bindings</h1>
+
+<h2>Controlling text and appearance</h2>
+<ol>
+    <li><a href="../documentation/visible-binding.html">The <code>visible</code> binding</a></li>
+    <li><a href="../documentation/text-binding.html">The <code>text</code> binding</a></li>
+    <li><a href="../documentation/html-binding.html">The <code>html</code> binding</a></li>
+    <li><a href="../documentation/css-binding.html">The <code>css</code> binding</a></li>
+    <li><a href="../documentation/style-binding.html">The <code>style</code> binding</a></li>
+    <li><a href="../documentation/attr-binding.html">The <code>attr</code> binding</a></li>
+</ol>
+
+<h2>Control flow</h2>
+<ol>
+    <li><a href="../documentation/foreach-binding.html">The <code>foreach</code> binding</a></li>
+    <li><a href="../documentation/if-binding.html">The <code>if</code> binding</a></li>
+    <li><a href="../documentation/ifnot-binding.html">The <code>ifnot</code> binding</a></li>
+    <li><a href="../documentation/with-binding.html">The <code>with</code> binding</a></li>
+</ol>
+
+<h2>Working with form fields</h2>
+<ol>
+    <li><a href="../documentation/click-binding.html">The <code>click</code> binding</a></li>
+    <li><a href="../documentation/event-binding.html">The <code>event</code> binding</a></li>
+    <li><a href="../documentation/submit-binding.html">The <code>submit</code> binding</a></li>
+    <li><a href="../documentation/enable-binding.html">The <code>enable</code> binding</a></li>
+    <li><a href="../documentation/disable-binding.html">The <code>disable</code> binding</a></li>
+    <li><a href="../documentation/value-binding.html">The <code>value</code> binding</a></li>
+    <li><a href="../documentation/hasfocus-binding.html">The <code>hasfocus</code> binding</a></li>
+    <li><a href="../documentation/checked-binding.html">The <code>checked</code> binding</a></li>
+    <li><a href="../documentation/options-binding.html">The <code>options</code> binding</a></li>
+    <li><a href="../documentation/selectedOptions-binding.html">The <code>selectedOptions</code> binding</a></li>    
+    <li><a href="../documentation/uniqueName-binding.html">The <code>uniqueName</code> binding</a></li>		
+</ol>
+
+<h2>Rendering templates</h2>
+<ol>
+    <li><a href="../documentation/template-binding.html">The <code>template</code> binding</a></li>
+</ol>
+
+<h2>Binding syntax</h2>
+<ol>
+    <li><a href="../documentation/binding-syntax.html">The <code>data-bind</code> syntax</a></li>
+    <li><a href="../documentation/binding-context.html">The binding context</a></li>
+</ol>
+
+<h1>Creating custom bindings</h1>
+<ol>
+    <li><a href="../documentation/custom-bindings.html">Creating custom bindings</a></li>
+    <li><a href="../documentation/custom-bindings-controlling-descendant-bindings.html">Controlling descendant bindings</a></li>
+    <li><a href="../documentation/custom-bindings-for-virtual-elements.html">Supporting virtual elements</a></li>
+</ol>
+
+<h1>Further techniques</h1>
+<ol>
+    <li><a href="../documentation/json-data.html">Loading and saving JSON data</a></li>
+    <li><a href="../documentation/extenders.html">Extending observables</a></li>
+    <li><a href="../documentation/throttle-extender.html">The <code>throttle</code> extender</a></li>
+    <li><a href="../documentation/unobtrusive-event-handling.html">Unobtrusive event handling</a></li>
+    <li><a href="../documentation/fn.html">Using <code>fn</code> to add custom functions</a></li>
+</ol>
+
+<h1>Plugins</h1>
+<ol>
+    <li><a href="../documentation/plugins-mapping.html">The <code>mapping</code> plugin</a></li>
+</ol>
+
+<h1>More information</h1>
+<ol>
+    <li><a href="../documentation/browser-support.html">Browser support</a></li>
+    <li><a href="http://groups.google.com/group/knockoutjs">Getting help</a></li>
+    <li><a href="../documentation/links.html">Links to tutorials &amp; examples</a></li>
+    <li><a href="../documentation/amd-loading.html">Usage with AMD using RequireJs (Asynchronous Module Definition)</a></li>
+</ol>
+
+		</div>		
+	</div>
+	<div class="rightCol">
+		<div class="documentation sticker">
+		    <div class="content">
+		    	<h1>The data-bind syntax</h1>	
+		    	<p>Knockout&#8217;s declarative binding system provides a concise and powerful way to link data to the UI. It&#8217;s generally easy and obvious to bind to simple data properties or to use a single binding. For more complex bindings, it helps to better understand the behavior and syntax of Knockout&#8217;s binding system.</p>
+
+<h3 id='binding_syntax'>Binding syntax</h3>
+
+<p>A binding consists of two items, the binding <em>name</em> and <em>value</em>, separated by a colon. Here is an example of a single, simple binding:</p>
+
+<pre><code>Today&#39;s message is: &lt;span data-bind=&quot;text: myMessage&quot;&gt;&lt;/span&gt;</code></pre>
+
+<p>An element can include multiple bindings (related or unrelated), with each binding separated by a comma. Here are some examples:</p>
+
+<pre><code>&lt;!-- related bindings: valueUpdate is a parameter for value --&gt;
+Your value: &lt;input data-bind=&quot;value: someValue, valueUpdate: &#39;afterkeydown&#39;&quot; /&gt;
+
+&lt;!-- unrelated bindings --&gt;
+Cellphone: &lt;input data-bind=&quot;value: cellphoneNumber, enable: hasCellphone&quot; /&gt;</code></pre>
+
+<p>The binding <em>name</em> should generally match a registered binding handler (either built-in or <a href='custom-bindings.html'>custom</a>) or be a parameter for another binding. If the name matches neither of those, Knockout will ignore it (without any error or warning). So if a binding doesn&#8217;t appear to work, first check that the name is correct.</p>
+
+<h4 id='binding_values'>Binding values</h4>
+
+<p>The binding <em>value</em> can be a single <a href='https://developer.mozilla.org/en-US/docs/JavaScript/Guide/Values,_variables,_and_literals'>value, variable, or literal</a> or almost any valid <a href='https://developer.mozilla.org/en-US/docs/JavaScript/Guide/Expressions_and_Operators'>JavaScript expression</a>. Here are examples of various binding values:</p>
+
+<pre><code>&lt;!-- variable (usually a property of the current view model --&gt;
+&lt;div data-bind=&quot;visible: shouldShowMessage&quot;&gt;...&lt;/div&gt;
+
+&lt;!-- comparison and conditional --&gt;
+The item is &lt;span data-bind=&quot;text: price() &gt; 50 ? &#39;expensive&#39; : &#39;cheap&#39;&quot;&gt;&lt;/span&gt;.
+
+&lt;!-- function call and comparison --&gt;
+&lt;button data-bind=&quot;enable: parseAreaCode(cellphoneNumber()) != &#39;555&#39;&quot;&gt;...&lt;/button&gt;
+
+&lt;!-- function expression --&gt;
+&lt;div data-bind=&quot;click: function (data) { myFunction(&#39;param1&#39;, data) }&quot;&gt;...&lt;/div&gt;
+
+&lt;!-- object literal (with unquoted and quoted property names) --&gt;
+&lt;div data-bind=&quot;with: {emotion: &#39;happy&#39;, &#39;facial-expression&#39;: &#39;smile&#39;}&quot;&gt;...&lt;/div&gt;</code></pre>
+
+<p>These examples show that the value can be just about any JavaScript expression. Even the comma is fine when it&#8217;s enclosed in braces, brackets, or parentheses. When the value is an object literal, the object&#8217;s property names must be valid JavaScript identifiers or be enclosed in quotes. If the binding value is an invalid expression or references an unknown variable, Knockout will output an error and stop processing bindings.</p>
+
+<h4 id='whitespace'>Whitespace</h4>
+
+<p>Bindings can include any amount of <em>whitespace</em> (spaces, tab, and newlines), so you&#8217;re free to use it to arrange your bindings as you like. The following examples are all equivalent:</p>
+
+<pre><code>&lt;!-- no spaces --&gt;
+&lt;select data-bind=&quot;options:availableCountries,optionsText:&#39;countryName&#39;,value:selectedCountry,optionsCaption:&#39;Choose...&#39;&quot;&gt;&lt;/select&gt;
+
+&lt;!-- some spaces --&gt;
+&lt;select data-bind=&quot;options : availableCountries, optionsText : &#39;countryName&#39;, value : selectedCountry, optionsCaption : &#39;Choose...&#39;&quot;&gt;&lt;/select&gt;
+
+&lt;!-- spaces and newlines --&gt;
+&lt;select data-bind=&quot;
+    options: availableCountries,
+    optionsText: &#39;countryName&#39;,
+    value: selectedCountry,
+    optionsCaption: &#39;Choose...&#39;&quot;&gt;&lt;/select&gt;</code></pre>
+
+<h3 id='notes_for_multiple_bindings_on_a_single_element'>Notes for multiple bindings on a single element</h3>
+
+<p>When you use multiple bindings on a single element, those bindings can interact. If this behavior surprises you, it&#8217;s worth bearing in mind the following current implementation details:</p>
+
+<ol>
+<li>
+<p><strong>Bindings are applied in order from left to right.</strong> There are a few rare cases where bindings function correctly only when ordered in a certain way, because one reads a property that another writes. This is a limitation that we&#8217;re likely to eliminate in a future version of Knockout. At present, the full list is:</p>
+
+<ul>
+<li><code>attr: { value: ... }</code> or <code>value: ...</code> should be used before <code>checked: ...</code></li>
+
+<li><code>options: ...</code> or <code>foreach: ...</code> should be used before <code>value: ...</code> or <code>selectedOptions: ...</code></li>
+</ul>
+</li>
+
+<li>
+<p><strong>When model values change, all bindings on the same element are updated together.</strong> For example, if you use <code>enable: allowEdits, value: someValue</code>, then both the <code>enable</code> and <code>value</code> bindings will be refreshed when either <code>allowEdits</code> or <code>someValue</code> changes. In some extreme cases this can lead to worse performance (<a href='http://www.knockmeout.net/2012/06/knockoutjs-performance-gotcha-3-all-bindings.html'>more info</a>). Don&#8217;t create custom bindings that rely on this implementation detail, because it&#8217;s a limitation we are likely to eliminate in a future version of Knockout.</p>
+</li>
+</ol>    
+		    </div>
+		    
+		    <div class="clear"></div>
+		</div>
+	</div>	
+</div>
+            <div class="clear"></div>
+            <div class="main-menu">
+    <ul>
+        <li><a rel="home" href="../index.html">Home</a></li>
+        <li><a rel="installation" href="../downloads/index.html">Download / Install</a></li>
+        <li><a rel="tutorials" href="http://learn.knockoutjs.com/">Tutorials</a></li>
+        <li><a rel="examples" href="../examples/">Live examples</a></li>
+        <li><a rel="documentation" href="../documentation/introduction.html">Documentation</a></li>
+        <li><a href="http://groups.google.com/group/knockoutjs">Forum</a></li>
+        <li><a href="http://github.com/SteveSanderson/knockout">Source</a></li>
+    </ul>
+</div>        	
+<div class="clear"></div>
+        </div>
+        
+        <div id="page-footer">(c) knockoutjs.com</div> 
+        
+        <script type="text/javascript">               
+            // Analytics
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-65756-7']);
+            _gaq.push(['_trackPageview']);	
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();             
+        </script>
+    </body>
+</html>

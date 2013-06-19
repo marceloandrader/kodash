@@ -1,0 +1,301 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Knockout : Downloads</title>
+        <link href="../css/tripoli.simple.css" type="text/css" rel="stylesheet" />
+        
+        <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+        <link rel="stylesheet" type="text/css" href="../css/smallScreen.css" media="only screen and (max-device-width: 800px)" />
+        <link rel="shortcut icon" href="img/favicon.ico" />
+        <!--[if IE]><link rel="stylesheet" type="text/css" href="../css/tripoli.simple.ie.css" /><![endif]-->
+        <!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="../css/ie6ie7.css" /><![endif]-->
+        <!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="../css/ie6.css" /><![endif]-->
+        <script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="../js/knockout-2.2.0.js"></script>
+<script type="text/javascript" src="../js/cufon-yui.js"></script>
+<script type="text/javascript" src="../js/titilliummaps.font.js"></script>
+<script type="text/javascript" src="../js/json2.js"></script>
+
+<!--[if lt IE 7]>
+<script defer type="text/javascript" src="../js/ie6pngfix.js"></script>
+<![endif]-->
+
+<script type="text/javascript" src="../js/syntaxhighlighter_3.0.83/scripts/shCore.js"></script> 
+<script type="text/javascript" src="../js/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script> 
+<script type="text/javascript" src="../js/syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script> 
+<link type="text/css" rel="stylesheet" href="../js/syntaxhighlighter_3.0.83/styles/shThemeFadeToGrey.css"/>  
+
+<script type="text/javascript">
+    $(function() {
+        // Fancy fonts
+        Cufon.replace('.titillium');
+        Cufon.replace('.engraved', {
+            textShadow: 'rgba(253, 224, 217, 0.45) 1.2px 1px'	
+        });
+        
+        // Syntax highlighting
+        $("pre > code").each(function() {
+            var codeText = $(this).text();
+            $(this).parent().text(codeText).addClass("brush:js");
+        });
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = false;
+        SyntaxHighlighter.all();
+        
+        // Highlight current top menu item
+        var desiredMenuItem = 'installation' || 'documentation';
+        $(".main-menu a[rel=" + desiredMenuItem + "]").addClass("active");
+        
+        // Highlight current left-hand-nav menu item
+        var urlFilename = location.href.match(/\/([^\/]+)$/);
+        if (urlFilename) {
+            $(".leftColContents li:has(a[href$=" + urlFilename[1] + "])").addClass("active");
+        }
+    });
+</script> 
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="vspace"></div>
+            <div class="main-menu">
+    <ul>
+        <li><a rel="home" href="../index.html">Home</a></li>
+        <li><a rel="installation" href="../downloads/index.html">Download / Install</a></li>
+        <li><a rel="tutorials" href="http://learn.knockoutjs.com/">Tutorials</a></li>
+        <li><a rel="examples" href="../examples/">Live examples</a></li>
+        <li><a rel="documentation" href="../documentation/introduction.html">Documentation</a></li>
+        <li><a href="http://groups.google.com/group/knockoutjs">Forum</a></li>
+        <li><a href="http://github.com/SteveSanderson/knockout">Source</a></li>
+    </ul>
+</div>        	
+<div class="clear"></div>
+            <div class="vspace"></div>
+            <div>	
+	<div class="leftCol">		
+		<div class="leftColBackground">&nbsp;</div>
+		<div class="leftColContents">
+			<h1>Getting started</h1>
+
+<ol>
+    <li><a href="../documentation/introduction.html">How KO works and what benefits it brings</a></li>
+    <li><a href="../downloads/index.html">Downloading and installing</a></li>
+</ol>
+
+<h1>Observables</h1>
+
+<ol>
+    <li><a href="../documentation/observables.html">Creating <em>view models</em> with <em>observables</em></a></li>
+    <li><a href="../documentation/computedObservables.html">Using <em>computed observables</em></a></li>
+    <li><a href="../documentation/observableArrays.html">Working with <em>observable arrays</em></a></li>	
+</ol>
+
+<h1>Bindings</h1>
+
+<h2>Controlling text and appearance</h2>
+<ol>
+    <li><a href="../documentation/visible-binding.html">The <code>visible</code> binding</a></li>
+    <li><a href="../documentation/text-binding.html">The <code>text</code> binding</a></li>
+    <li><a href="../documentation/html-binding.html">The <code>html</code> binding</a></li>
+    <li><a href="../documentation/css-binding.html">The <code>css</code> binding</a></li>
+    <li><a href="../documentation/style-binding.html">The <code>style</code> binding</a></li>
+    <li><a href="../documentation/attr-binding.html">The <code>attr</code> binding</a></li>
+</ol>
+
+<h2>Control flow</h2>
+<ol>
+    <li><a href="../documentation/foreach-binding.html">The <code>foreach</code> binding</a></li>
+    <li><a href="../documentation/if-binding.html">The <code>if</code> binding</a></li>
+    <li><a href="../documentation/ifnot-binding.html">The <code>ifnot</code> binding</a></li>
+    <li><a href="../documentation/with-binding.html">The <code>with</code> binding</a></li>
+</ol>
+
+<h2>Working with form fields</h2>
+<ol>
+    <li><a href="../documentation/click-binding.html">The <code>click</code> binding</a></li>
+    <li><a href="../documentation/event-binding.html">The <code>event</code> binding</a></li>
+    <li><a href="../documentation/submit-binding.html">The <code>submit</code> binding</a></li>
+    <li><a href="../documentation/enable-binding.html">The <code>enable</code> binding</a></li>
+    <li><a href="../documentation/disable-binding.html">The <code>disable</code> binding</a></li>
+    <li><a href="../documentation/value-binding.html">The <code>value</code> binding</a></li>
+    <li><a href="../documentation/hasfocus-binding.html">The <code>hasfocus</code> binding</a></li>
+    <li><a href="../documentation/checked-binding.html">The <code>checked</code> binding</a></li>
+    <li><a href="../documentation/options-binding.html">The <code>options</code> binding</a></li>
+    <li><a href="../documentation/selectedOptions-binding.html">The <code>selectedOptions</code> binding</a></li>    
+    <li><a href="../documentation/uniqueName-binding.html">The <code>uniqueName</code> binding</a></li>		
+</ol>
+
+<h2>Rendering templates</h2>
+<ol>
+    <li><a href="../documentation/template-binding.html">The <code>template</code> binding</a></li>
+</ol>
+
+<h2>Binding syntax</h2>
+<ol>
+    <li><a href="../documentation/binding-syntax.html">The <code>data-bind</code> syntax</a></li>
+    <li><a href="../documentation/binding-context.html">The binding context</a></li>
+</ol>
+
+<h1>Creating custom bindings</h1>
+<ol>
+    <li><a href="../documentation/custom-bindings.html">Creating custom bindings</a></li>
+    <li><a href="../documentation/custom-bindings-controlling-descendant-bindings.html">Controlling descendant bindings</a></li>
+    <li><a href="../documentation/custom-bindings-for-virtual-elements.html">Supporting virtual elements</a></li>
+</ol>
+
+<h1>Further techniques</h1>
+<ol>
+    <li><a href="../documentation/json-data.html">Loading and saving JSON data</a></li>
+    <li><a href="../documentation/extenders.html">Extending observables</a></li>
+    <li><a href="../documentation/throttle-extender.html">The <code>throttle</code> extender</a></li>
+    <li><a href="../documentation/unobtrusive-event-handling.html">Unobtrusive event handling</a></li>
+    <li><a href="../documentation/fn.html">Using <code>fn</code> to add custom functions</a></li>
+</ol>
+
+<h1>Plugins</h1>
+<ol>
+    <li><a href="../documentation/plugins-mapping.html">The <code>mapping</code> plugin</a></li>
+</ol>
+
+<h1>More information</h1>
+<ol>
+    <li><a href="../documentation/browser-support.html">Browser support</a></li>
+    <li><a href="http://groups.google.com/group/knockoutjs">Getting help</a></li>
+    <li><a href="../documentation/links.html">Links to tutorials &amp; examples</a></li>
+    <li><a href="../documentation/amd-loading.html">Usage with AMD using RequireJs (Asynchronous Module Definition)</a></li>
+</ol>
+
+		</div>		
+	</div>
+	<div class="rightCol">
+		<div class="documentation sticker">
+		    <div class="content">
+		    	<h1>Downloads</h1>	
+		    	<p>Get the latest stable production build of Knockout.js:</p>
+<div class='download-panel'>
+	<a href='../downloads/knockout-2.2.1.js' class='download-button'>
+    <p>Download</p>
+    <p class='smallprint'>v2.2.1 - 14kb min+gz</p>
+</a>
+</div><div class='download-debug-panel'>
+	Also available: <a href='knockout-2.2.1.debug.js'>debug build</a>.
+	<strong>Note:</strong> This is only intended to help you understand how Knockout works. Don't use it for normal application
+	development, because it exposes additional unsupported private APIs.
+</div>
+<h3 id='installation'>Installation</h3>
+
+<p>Simply reference the JavaScript file using a <code>&lt;script&gt;</code> tag somewhere on your HTML pages. For example,</p>
+
+<pre><code>&lt;script type=&#39;text/javascript&#39; src=&#39;knockout-2.2.1.js&#39;&gt;&lt;/script&gt;</code></pre>
+
+<p>Of course, update the <code>src</code> attribute to match the location where you put the downloaded file. Next, if you&#8217;re new to Knockout, get started with <a href='http://learn.knockoutjs.com'>interactive tutorials</a>, see some <a href='../examples/'>live examples</a>, or dig into documentation about <a href='../documentation/observables.html'>observables</a>.</p>
+
+<h3 id='content_delivery_networks_cdns'>Content Delivery Networks (CDNs)</h3>
+
+<p>To give your users the fastest download speeds, you might instead prefer to reference <code>knockout.js</code> on one of the following third-party CDNs:</p>
+
+<ul>
+<li>
+<p><strong>Microsoft Ajax CDN</strong> (<a href='http://www.asp.net/ajaxlibrary/CDN.ashx'>about</a>)</p>
+
+<ul>
+<li><a href='http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js'>Knockout version 2.2.1</a></li>
+</ul>
+</li>
+
+<li>
+<p><strong>CDNJS</strong> (<a href='http://cdnjs.com/'>about</a>)</p>
+
+<ul>
+<li><a href='http://cdnjs.cloudflare.com/ajax/libs/knockout/2.2.0/knockout-min.js'>Knockout version 2.2.0</a></li>
+</ul>
+</li>
+</ul>
+
+<h3 id='archive_of_all_versions'>Archive of all versions</h3>
+
+<ul>
+<li><a href='knockout-2.2.1.js'>v2.2.1</a> (<a href='knockout-2.2.1.debug.js'>debug</a>) &#8212; January 15th, 2013</li>
+
+<li><a href='knockout-2.2.0.js'>v2.2.0</a> (<a href='knockout-2.2.0.debug.js'>debug</a>) &#8212; October 28th, 2012</li>
+
+<li><a href='knockout-2.2.0rc.js'>v2.2.0 Release Candidate</a> (<a href='knockout-2.2.0rc.debug.js'>debug</a>) &#8212; October 1st, 2012</li>
+
+<li><a href='knockout-2.1.0.js'>v2.1.0</a> (<a href='knockout-2.1.0.debug.js'>debug</a>) &#8212; May 7th, 2012</li>
+
+<li><a href='knockout-2.1.0rc2.js'>v2.1.0 Release Candidate 2</a> (<a href='knockout-2.1.0rc2.debug.js'>debug</a>) &#8212; April 25th, 2012</li>
+
+<li><a href='knockout-2.1.0rc.js'>v2.1.0 Release Candidate</a> (<a href='knockout-2.1.0rc.debug.js'>debug</a>) &#8212; April 18th, 2012</li>
+
+<li><a href='knockout-2.1.0beta.js'>v2.1.0 Beta</a> (<a href='knockout-2.1.0beta.debug.js'>debug</a>) &#8212; March 23rd, 2012</li>
+
+<li><a href='knockout-2.0.0.js'>v2.0.0</a> (<a href='knockout-2.0.0.debug.js'>debug</a>) &#8212; December 21st, 2011</li>
+
+<li><a href='knockout-2.0.0rc.js'>v2.0.0 Release Candidate</a> (<a href='knockout-2.0.0rc.debug.js'>debug</a>) &#8212; December 14th, 2011</li>
+
+<li><a href='knockout-1.3.0beta.js'>v1.3.0 Beta</a> (<a href='knockout-1.3.0beta.debug.js'>debug</a>) &#8212; August 30th, 2011</li>
+
+<li><a href='knockout-1.2.1.js'>v1.2.1</a> (<a href='knockout-1.2.1.debug.js'>debug</a>) &#8212; May 22nd, 2011</li>
+
+<li><a href='knockout-1.2.0.js'>v1.2.0</a> (<a href='knockout-1.2.0.debug.js'>debug</a>) &#8212; April 27th, 2011</li>
+
+<li><a href='knockout-1.1.2.js'>v1.1.2</a> (<a href='knockout-1.1.2.debug.js'>debug</a>) &#8212; January 1st, 2011</li>
+
+<li><a href='knockout-1.1.1.js'>v1.1.1</a> (<a href='knockout-1.1.1.debug.js'>debug</a>) &#8212; November 5th, 2010</li>
+
+<li><a href='knockout-1.1.0.js'>v1.1.0</a> (<a href='knockout-1.1.0.debug.js'>debug</a>) &#8212; October 19th, 2010</li>
+
+<li><a href='knockout-1.05.min.js'>v1.0.5</a> (<a href='knockout-1.05.js'>debug</a>) &#8212; August 24st, 2010</li>
+
+<li><a href='knockout-1.04.min.js'>v1.0.4</a> (<a href='knockout-1.04.js'>debug</a>) &#8212; August 12th, 2010</li>
+
+<li><a href='knockout-1.03.min.js'>v1.0.3</a> (<a href='knockout-1.03.js'>debug</a>) &#8212; July 30th, 2010</li>
+
+<li><a href='knockout-1.02.min.js'>v1.0.2</a> (<a href='knockout-1.02.js'>debug</a>) &#8212; July 22nd, 2010</li>
+
+<li><a href='knockout-1.01.min.js'>v1.0.1</a> (<a href='knockout-1.01.js'>debug</a>) &#8212; July 9th, 2010</li>
+
+<li><a href='knockout-min.js'>v1.0.0</a> (<a href='knockout.js'>debug</a>) &#8212; July 5th, 2010</li>
+</ul>
+
+<h3 id='related_files'>Related files</h3>
+
+<ul>
+<li><a href='jquery.tmpl.min.js'>jquery.tmpl</a> (<a href='jquery.tmpl.js'>debug</a>) &#8212; the old jQuery Templates plugin sometimes used with older versions of Knockout.js. This approach to templating has been deprecated since Knockout v2.0.0.</li>
+</ul>    
+		    </div>
+		    
+		    <div class="clear"></div>
+		</div>
+	</div>	
+</div>
+            <div class="clear"></div>
+            <div class="main-menu">
+    <ul>
+        <li><a rel="home" href="../index.html">Home</a></li>
+        <li><a rel="installation" href="../downloads/index.html">Download / Install</a></li>
+        <li><a rel="tutorials" href="http://learn.knockoutjs.com/">Tutorials</a></li>
+        <li><a rel="examples" href="../examples/">Live examples</a></li>
+        <li><a rel="documentation" href="../documentation/introduction.html">Documentation</a></li>
+        <li><a href="http://groups.google.com/group/knockoutjs">Forum</a></li>
+        <li><a href="http://github.com/SteveSanderson/knockout">Source</a></li>
+    </ul>
+</div>        	
+<div class="clear"></div>
+        </div>
+        
+        <div id="page-footer">(c) knockoutjs.com</div> 
+        
+        <script type="text/javascript">               
+            // Analytics
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-65756-7']);
+            _gaq.push(['_trackPageview']);	
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();             
+        </script>
+    </body>
+</html>
